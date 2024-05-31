@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
+import { AuthenticationService } from '../autho-service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,10 +11,9 @@ import { AuthService } from '@auth0/auth0-angular';
   styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent {
-  constructor(public auth: AuthService) {}
+  constructor(public autho: AuthenticationService) {}
 
   logout() {
-    console.log('logout');
-    this.auth.logout({ logoutParams: { returnTo: window.location.origin } });
+    this.autho.logout();
   }
 }

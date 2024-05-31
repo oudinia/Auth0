@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, effect, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
+import { AuthenticationService } from '../autho-service';
 
 @Component({
   selector: 'app-welcome',
@@ -10,11 +11,9 @@ import { AuthService } from '@auth0/auth0-angular';
   styleUrl: './welcome.component.scss',
 })
 export class WelcomeComponent implements OnInit {
-  constructor(private auth: AuthService, private router: Router) {}
-
-  ngOnInit(): void {
-    this.auth.isAuthenticated$.subscribe((isAuthenticated) => {
-      if (isAuthenticated) {
+  constructor(private autho: AuthenticationService, private router: Router) {
+    effect(() => {
+      if (this.autho.isAuthenticated()) {
         console.log('User is authenticated');
         this.router.navigate(['/dashboard']);
       } else {
@@ -23,8 +22,9 @@ export class WelcomeComponent implements OnInit {
     });
   }
 
+  ngOnInit(): void {}
+
   login() {
-    console.log('login');
-    this.auth.loginWithRedirect();
+    this.autho.loginWithRedirect();
   }
 }
