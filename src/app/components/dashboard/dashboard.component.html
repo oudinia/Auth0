@@ -35,12 +35,12 @@
     </div>
   </header>
 
-  <!-- <div *ngIf="autho.user$ | async as user">
+  <div *ngIf="autho.user() as user">
     <ul>
       <li>{{ user.name }}</li>
       <li>{{ user.email }}</li>
     </ul>
     <br />
     <p>{{ user | json }}</p>
-  </div> -->
+  </div>
 </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit, effect, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
-import { AuthenticationService } from '../autho-service';
+import { AuthenticationService } from '../../services/autho-service';
 
 @Component({
   selector: 'app-welcome',

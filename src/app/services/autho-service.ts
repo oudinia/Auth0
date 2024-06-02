@@ -1,12 +1,15 @@
-import { Injectable, Signal } from '@angular/core';
+import { Injectable, Signal, computed } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { AuthService } from '@auth0/auth0-angular';
-import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
   isAuthenticated = toSignal(this.auth.isAuthenticated$, {
     initialValue: false,
+  });
+
+  user = toSignal(this.auth.user$, {
+    initialValue: null,
   });
 
   constructor(private auth: AuthService) {}

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
-import { AuthenticationService } from '../autho-service';
+import { AuthenticationService } from '../../services/autho-service';
 
 @Component({
   selector: 'app-dashboard',
