@@ -1,2 +1,8 @@
 <p>todos works!</p>
-{{ store.todos() | json }}
+
+@if(!store.loading()) {
+<todos-list></todos-list>
+}
+@else {
+  <mat-spinner></mat-spinner>
+}

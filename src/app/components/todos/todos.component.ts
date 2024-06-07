@@ -1,11 +1,13 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { TodosStore } from '../../store/todos.store';
+import { TodosStore } from './store/todos.store';
 import { JsonPipe } from '@angular/common';
+import {TodosListComponent} from "./todos-list/todos-list.component";
+import {MatProgressSpinner} from "@angular/material/progress-spinner";
 
 @Component({
   selector: 'todos',
   standalone: true,
-  imports: [JsonPipe],
+  imports: [JsonPipe, TodosListComponent, MatProgressSpinner],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.scss',
 })
