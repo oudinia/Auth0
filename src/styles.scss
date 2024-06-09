@@ -1,7 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap');
+
 /* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html {
+    font-size: 65%;
+  }
+
+
+  h1 {
+    @apply font-sans font-bold text-h1 leading-[3.365rem] tracking-[-0.033rem];
+  }
+  
+  h2 {
+    @apply font-sans font-bold text-h2 leading-[2.788rem] tracking-[-0.025rem];
+  }
+  
+  h3 {
+    @apply font-sans font-bold text-h3 leading-[2.5rem] tracking-[-0.025rem];
+  }
+  
+  h4 {
+    @apply font-sans font-bold text-h4 leading-[1.923rem] tracking-[-0.02rem];
+  }

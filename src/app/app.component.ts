@@ -12,16 +12,21 @@ import { filter } from 'rxjs/operators';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
+
   oauthService = inject(OAuthService);
 
   constructor() {
+   
+
+   
+  }
+  login() {
     this.oauthService.configure(authZeroCodeFlowConfig);
     this.oauthService.loadDiscoveryDocumentAndLogin();
-
     this.oauthService.events
-      .pipe(filter((e) => e.type === 'token_received'))
-      .subscribe((_) => this.oauthService.loadUserProfile());
-  }
+    .pipe(filter((e) => e.type === 'token_received'))
+    .subscribe((_) => this.oauthService.loadUserProfile());
+    }
 
   get userName(): string {
     const claims = this.oauthService.getIdentityClaims();

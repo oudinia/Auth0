@@ -22,6 +22,7 @@
     "@angular/router": "^17.3.0",
     "@auth0/auth0-angular": "^2.2.3",
     "@ngrx/signals": "^17.2.0",
+    "@tailwindcss/typography": "^0.5.13",
     "angular-oauth2-oidc": "^17.0.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
