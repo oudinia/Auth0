@@ -1,4 +1,3 @@
-
 @if (idToken) {
 <div>
   <div style="text-align: center">
@@ -8,18 +7,20 @@
   <h2>User</h2>
   <p>{{ userName }}</p>
 
-  <h2>Id-Token</h2>
+  <h3>Id-Token</h3>
   <p>{{ idToken }}</p>
 
-  <h2>Access Token</h2>
+  <h3>Access Token</h3>
   <p>{{ accessToken }}</p>
 
   <p>
     <button (click)="refresh()">Refresh</button>
   </p>
 </div>
-<h3>h3 heading</h3>
-<h4>h4 heading</h4>
+<h1>This is an H1 heading</h1>
+<h2>This is an H2 heading</h2>
+<h3>This is an H3 heading</h3>
+<h4>This is an H4 heading</h4>
 }
 
 <button (click)="login()">Login</button>
