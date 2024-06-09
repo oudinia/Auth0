@@ -9,3 +9,13 @@ export const authCodeFlowConfig: AuthConfig = {
   showDebugInformation: true,
   timeoutFactor: 0.01,
 };
+
+export const authZeroCodeFlowConfig: AuthConfig = {
+  issuer: 'https://oudinia.eu.auth0.com/',
+  redirectUri: window.location.origin,
+  clientId: 'zarlLp8B6Epr1SDIvzOpvC7rxYydybx1',
+  responseType: 'code',
+  scope: 'openid profile email offline_access api',
+  showDebugInformation: true,
+  timeoutFactor: 0.01,
+};
