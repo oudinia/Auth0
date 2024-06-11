@@ -1,26 +1,22 @@
-@if (idToken) {
-<div>
-  <div style="text-align: center">
-    <h1>Welcome</h1>
+<header class="w-full h-8 bg-indigodye flex justify-between items-center ">
+  <div class="container  px-2">
+    <h3 class="text-white font-medium">OAuth2 using Auth0, Authorization Code Flow with PKCE and angular-oauth2-oidc</h3>
   </div>
 
-  <h2>User</h2>
-  <p>{{ userName }}</p>
+  <div>
+    <button (click)="login()" class="bg-blueRibbon text-white py-2 px-4 rounded">
+      Login
+    </button>
+  </div>
 
-  <h3>Id-Token</h3>
-  <p>{{ idToken }}</p>
+    <div>
+      <button (click)="logout()" class="bg-blueRibbon text-white py-2 px-4 rounded">
+        Logout
+      </button>
+    </div>
 
-  <h3>Access Token</h3>
-  <p>{{ accessToken }}</p>
+</header>
 
-  <p>
-    <button (click)="refresh()">Refresh</button>
-  </p>
-</div>
-<h1>This is an H1 heading</h1>
-<h2>This is an H2 heading</h2>
-<h3>This is an H3 heading</h3>
-<h4>This is an H4 heading</h4>
-}
 
-<button (click)="login()">Login</button>
+
+

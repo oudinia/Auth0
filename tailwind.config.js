@@ -1,6 +1,6 @@
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}", // Adjust this to match your project structure
+    "./src/**/*.{html,ts}",// Adjust this to match your project structure
   ],
   theme: {
     extend: {
@@ -17,9 +17,11 @@ module.exports = {
         charcoal: "#3A4374",
         slateGray: "#647196",
         lightCoral: "#F49F85",
+        indigodye: "#373F68",
         skyBlue: "#62BCFA",
         headingColor: "#3A4374", // Standard color for headings
         textColor: "#647196", // Standard color for normal text
+        bodyBackgroundColor: "#F2F2F2",
       },
       spacing: {
         0: "0rem",

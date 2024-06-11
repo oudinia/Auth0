@@ -1,7 +1,9 @@
-import { Component, OnInit, effect, signal } from '@angular/core';
+import {Component, OnInit, effect, signal, inject} from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
 import { AuthenticationService } from '../../services/autho-service';
+import {filter} from "rxjs/operators";
+import {OAuthService} from "angular-oauth2-oidc";
 
 @Component({
   selector: 'app-welcome',
@@ -11,20 +13,36 @@ import { AuthenticationService } from '../../services/autho-service';
   styleUrl: './welcome.component.scss',
 })
 export class WelcomeComponent implements OnInit {
-  constructor(private autho: AuthenticationService, private router: Router) {
-    effect(() => {
-      if (this.autho.isAuthenticated()) {
-        console.log('User is authenticated');
-        this.router.navigate(['/dashboard']);
-      } else {
-        console.log('User is not authenticated');
-      }
-    });
+  oauthService = inject(OAuthService);
+
+  constructor() {
+
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.oauthService.events
+      .pipe(filter((e) => e.type === 'token_received'))
+      .subscribe((_) =>  {
+        console.log(this.oauthService.getIdToken())
+        return      this.oauthService.loadUserProfile()
+      });
+  }
 
-  login() {
-    this.autho.loginWithRedirect();
+  get userName(): string {
+    const claims = this.oauthService.getIdentityClaims();
+    if (!claims) return '';
+    return claims['given_name'];
+  }
+
+  get idToken(): string {
+    return this.oauthService.getIdToken();
+  }
+
+  get accessToken(): string {
+    return this.oauthService.getAccessToken();
+  }
+
+  refresh() {
+    this.oauthService.refreshToken();
   }
 }

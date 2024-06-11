@@ -31,6 +31,9 @@ h4 {
   @apply font-sans font-bold text-h4 leading-[1.923rem] tracking-[-0.02rem];
 }
 
+body {
+  @apply bg-bodyBackgroundColor;
+}
 body,
 p {
   @apply text-textColor;
