@@ -7,6 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
+import {MatIcon} from "@angular/material/icon";
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,8 @@ import { CommonModule } from '@angular/common';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIcon
   ]
 })
 export class LoginComponent {
@@ -28,7 +30,7 @@ export class LoginComponent {
 
   loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required, Validators.minLength(8)]]
+    password: ['', [Validators.required, Validators.minLength(3)]]
   });
 
   onSubmit() {

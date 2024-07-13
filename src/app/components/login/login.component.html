@@ -1,14 +1,16 @@
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" style="width:100%" class="  flex flex-col space-y-4 pt-6 max-w-md mx-auto">
-  <mat-form-field appearance="outline" floatLabel="always" class="w-full">
-    <mat-label>Email</mat-label>
-    <input matInput formControlName="email" type="email" required>
+  <mat-form-field appearance="outline" floatLabel="always"  class="w-full">
+    <mat-icon matIconPrefix>email</mat-icon>
+
+    <input matInput formControlName="email" type="email" required placeholder="email...">
     <mat-error *ngIf="loginForm.get('email')?.hasError('required')">Email is required</mat-error>
     <mat-error *ngIf="loginForm.get('email')?.hasError('email')">Please enter a valid email</mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="outline" floatLabel="always" class="w-full">
+    <mat-icon matIconPrefix>key</mat-icon>
     <mat-label>Password</mat-label>
-    <input matInput formControlName="password" type="password" autocomplete="off" required>
+    <input matInput formControlName="password" type="password" autocomplete="off"  placeholder="password..." required>
     <mat-error *ngIf="loginForm.get('password')?.hasError('required')">Password is required</mat-error>
     <mat-error *ngIf="loginForm.get('password')?.hasError('minlength')">Password must be at least 8 characters</mat-error>
   </mat-form-field>

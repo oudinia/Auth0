@@ -42,7 +42,9 @@ p {
 }
 
 
-
+:root {
+  --mat-form-field-error-text-color: theme('colors.ErrorColor');
+}
 
 //
 //  }
@@ -71,7 +73,7 @@ p {
 .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--invalid .mdc-notched-outline__leading,
 .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--invalid .mdc-notched-outline__notch,
 .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--invalid .mdc-notched-outline__trailing {
-  border-color: red !important;
+  border-color: var(--mat-form-field-error-text-color) !important;
 }
 .mdc-text-field--outlined:not(.mdc-text-field--disabled) {
   &,

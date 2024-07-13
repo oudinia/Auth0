@@ -22,6 +22,7 @@ module.exports = {
         headingColor: "#3A4374", // Standard color for headings
         textColor: "#647196", // Standard color for normal text
         bodyBackgroundColor: "#F2F2F2",
+        ErrorColor: "red",
       },
       spacing: {
         0: "0rem",
