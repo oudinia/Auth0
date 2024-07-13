@@ -16,16 +16,16 @@ export class WelcomeComponent implements OnInit {
   oauthService = inject(OAuthService);
 
   constructor() {
-
-  }
-
-  ngOnInit(): void {
     this.oauthService.events
       .pipe(filter((e) => e.type === 'token_received'))
       .subscribe((_) =>  {
         console.log(this.oauthService.getIdToken())
         return      this.oauthService.loadUserProfile()
       });
+  }
+
+  ngOnInit(): void {
+
   }
 
   get userName(): string {

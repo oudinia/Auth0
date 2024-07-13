@@ -4,19 +4,21 @@
   </div>
 
   <div>
-    <button (click)="login()" class="bg-blueRibbon text-white py-2 px-4 rounded">
+    <button mat-flat-button (click)="login()" >
       Login
     </button>
   </div>
 
     <div>
-      <button (click)="logout()" class="bg-blueRibbon text-white py-2 px-4 rounded">
+      <button mat-flat-button (click)="logout()" >
         Logout
       </button>
     </div>
 
 </header>
-
+<body>
+<router-outlet />
+</body>
 
 
 

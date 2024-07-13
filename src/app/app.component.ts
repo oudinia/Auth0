@@ -1,13 +1,13 @@
 import {Component, inject, OnInit} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { OAuthService } from 'angular-oauth2-oidc';
-import { authCodeFlowConfig, authZeroCodeFlowConfig } from './auth.config';
-import { filter } from 'rxjs/operators';
+import { authZeroCodeFlowConfig } from './auth.config';
+import {MatButton} from "@angular/material/button";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, MatButton],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
