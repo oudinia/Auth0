@@ -1,13 +1,14 @@
 // material/overrides/_buttons.scss
 :root {
   // Angular Material button variables
-  --mdc-protected-button-container-shape: 0.625rem;
+  --mdc-protected-button-container-shape: 1rem;
   --mdc-typography-button-font-family: 'Jost' !important;
   --mdc-typography-button-font-size: 1.8rem !important;
 
   --mdc-filled-button-label-text-font: 'Jost' !important;
   --mdc-filled-button-label-text-size: 1.4rem !important;
   --mdc-filled-button-label-text-weight: 700;
+  --mdc-filled-button-container-shape: 1rem !important;
 
 
   --mdc-typography-button-font-weight: 700;
