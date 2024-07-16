@@ -12,7 +12,7 @@ export const authCodeFlowConfig: AuthConfig = {
 
 export const authZeroCodeFlowConfig: AuthConfig = {
   issuer: 'https://oudinia.eu.auth0.com/',
-  redirectUri: window.location.origin,
+  redirectUri: window.location.origin + '/welcome',
   clientId: 'zarlLp8B6Epr1SDIvzOpvC7rxYydybx1',
   responseType: 'code',
   scope: 'openid profile email offline_access api',

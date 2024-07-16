@@ -15,19 +15,11 @@ export class LoginComponent {
 
     constructor(private router: Router) {
         this.oauthService.configure(authZeroCodeFlowConfig);
-        this.oauthService.tokenValidationHandler = new JwksValidationHandler();
-        this.oauthService.setupAutomaticSilentRefresh();
-        this.oauthService.loadDiscoveryDocumentAndTryLogin().then(() => {
-            if (this.oauthService.hasValidAccessToken()) {
-                // Load UserProfile to get the additional claims
-                this.oauthService.loadUserProfile();
-                console.log('something');
-                this.router.navigateByUrl('/');
-            } else {
-                console.log('something else');
-                this.oauthService.initCodeFlow();
-            }
+        this.oauthService.loadDiscoveryDocumentAndLogin().then(result => {
+            console.log(result)
+            this.router.navigate(['/welcome']);
         });
+        console.log('LoginComponent constructor');
     }
 
     private handleSuccessfulLogin() {

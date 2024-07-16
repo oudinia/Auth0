@@ -1,8 +1,10 @@
 // src/app/app.routes.ts
 import { Routes } from '@angular/router';
+import {LoginComponent} from "./components/login/login.component";
+import {HomeComponent} from "./components/home/home.component";
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
     path: 'welcome',
     loadComponent: () => import('./components/welcome/welcome.component').then(m => m.WelcomeComponent)
@@ -17,7 +19,11 @@ export const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./components/login/login.routes').then(m => m.default)
+    component: LoginComponent,
   },
-  { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
+  {
+    path: 'home',
+    component: HomeComponent,
+  },
+  { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];

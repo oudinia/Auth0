@@ -37,6 +37,7 @@ module.exports = {
         2: "2rem",       // 20px
         2.4: "2.4rem",   // 24px
         2.5: "2.5rem",   // 25px
+        2.6: "2.6rem",   // 26px
         3: "3rem",       // 30px
         3.5: "3.5rem",   // 35px
         4: "4rem",       // 40px
@@ -59,6 +60,7 @@ module.exports = {
         40: "40rem",     // 400px
       },
       fontSize: {
+        '1.8': '1.8rem', // 18px
         h1: ["2.307rem", {lineHeight: "3.365rem", letterSpacing: "-0.033rem"}], // 24px, 35px line-height, -0.33px letter-spacing
         h2: ["1.923rem", {lineHeight: "2.788rem", letterSpacing: "-0.025rem"}], // 20px, 29px line-height, -0.25px letter-spacing
         h3: ["1.731rem", {lineHeight: "2.5rem", letterSpacing: "-0.025rem"}], // 18px, 26px line-height, -0.25px letter-spacing
@@ -66,7 +68,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('./tailwindcss-plugin-theme-variables')
-  ],
+  plugins: [],
 };

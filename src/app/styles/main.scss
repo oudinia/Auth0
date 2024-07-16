@@ -1,5 +1,13 @@
-@use "overrides/buttons";
-@use "overrides/_input";
-:root {
-  --mat-form-field-error-text-color: theme('colors.ErrorColor');
-}
+// main.scss
+
+
+
+// Import Tailwind base styles first
+@use "tailwind" as *;
+
+@use "material/overrides/buttons" as *;
+@use "material/overrides/input" as *;
+// Then import your custom styles (including headings)
+@use "typography/_headings";
+
+

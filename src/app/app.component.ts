@@ -1,7 +1,6 @@
 import {Component, inject, OnInit} from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { OAuthService } from 'angular-oauth2-oidc';
-import { authZeroCodeFlowConfig } from './auth.config';
+import {Router, RouterOutlet} from '@angular/router';
+import {OAuthService} from 'angular-oauth2-oidc';
 import {MatButton} from "@angular/material/button";
 
 @Component({
@@ -15,26 +14,21 @@ export class AppComponent {
 
   oauthService = inject(OAuthService);
 
-  constructor() {
-
-
+  constructor(private router: Router) {
 
   }
 
+  get idToken(): string {
+    return this.oauthService.getIdToken();
+  }
 
   login() {
-    this.oauthService.configure(authZeroCodeFlowConfig);
-    this.oauthService.loadDiscoveryDocumentAndLogin().then(result => {
-
-      console.log(result)
-    });
-
-
-    }
-
+    this.router.navigate(['/login']);
+  }
 
 
   logout() {
     this.oauthService.logOut();
+    this.router.navigate(['/home']);
   }
 }
